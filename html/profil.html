@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль | Клуб любителей Жигули</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Russo+One&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/prof.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header__inner">
+            <nav class="header__nav" aria-label="Основная навигация">
+                <a href="./main.html#models" class="header__link">Модели и характеристики</a>
+                <a href="./contacts.html" class="header__link">Контакты</a>
+                <a href="./about.html" class="header__link">О нас</a>
+                <a href="./main.html" class="header__logo">ЖИГУЛЬ</a>
+                <a href="#" class="header__link">Сертификат</a>
+                <a href="#" class="header__link">Проекты и тюнинг</a>
+                <a href="./profil.html" class="header__link header__link--active">Профиль</a>
+            </nav>
+            <button type="button" class="header__theme" id="themeBtn" aria-label="Сменить тему"></button>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="profile">
+            <div class="container">
+                <div class="profile__panel">
+                    <div class="profile__top">
+                        <h1 class="profile__title">Профиль</h1>
+                        <a href="./main.html" class="profile__back">Назад</a>
+                    </div>
+
+                    <div class="profile__info" id="userInfo">
+                        <p class="profile__row">Ник: <span id="name"></span></p>
+                        <p class="profile__row">E-mail: <span id="email"></span></p>
+                        <p class="profile__row">Телефон: <span id="phone"></span></p>
+                    </div>
+
+                    <a href="./index.html" class="profile__edit" id="profileEdit">Изменить данные</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/prof.js"></script>
+</body>
+
+</html>

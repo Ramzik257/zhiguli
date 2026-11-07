@@ -1,0 +1,46 @@
+(function () {
+    const THEME_KEY = 'zhiguli-theme';
+    const body = document.body;
+    const themeBtn = document.getElementById('themeBtn');
+
+    const slideImagesMap = [
+        ['../assets/ваз2106.webp', '../assets/ваз2106черная.webp'],
+        ['../assets/ваз2107.webp', '../assets/ваз2107черная.webp'],
+        ['../assets/ваз2199.webp', '../assets/ваз2199черная.webp'],
+    ];
+
+    function swapThemedImages(isDark) {
+        document.querySelectorAll('.slider__slide img').forEach((img, index) => {
+            if (index < slideImagesMap.length) {
+                img.src = isDark ? slideImagesMap[index][1] : slideImagesMap[index][0];
+            }
+        });
+
+        document.querySelectorAll('.models__image').forEach((img) => {
+            const lightSrc = img.dataset.light;
+            const darkSrc = img.dataset.dark;
+
+            if (lightSrc && darkSrc) {
+                img.src = isDark ? darkSrc : lightSrc;
+            }
+        });
+    }
+
+    function applyTheme(isDark) {
+        body.classList.toggle('theme--dark', isDark);
+        swapThemedImages(isDark);
+    }
+
+    const savedTheme = localStorage.getItem(THEME_KEY);
+    applyTheme(savedTheme === 'dark');
+
+    if (!themeBtn) {
+        return;
+    }
+
+    themeBtn.addEventListener('click', () => {
+        const isDark = !body.classList.contains('theme--dark');
+        applyTheme(isDark);
+        localStorage.setItem(THEME_KEY, isDark ? 'dark' : 'light');
+    });
+})();

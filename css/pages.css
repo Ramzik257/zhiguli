@@ -1,0 +1,267 @@
+.page {
+    padding: 48px 0 24px;
+}
+
+.page__eyebrow {
+    margin: 0 0 10px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.page__title {
+    margin: 0 0 16px;
+    font-family: var(--font-display);
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 400;
+    letter-spacing: 0.03em;
+}
+
+.page__lead {
+    margin: 0;
+    max-width: 54ch;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+/* About */
+
+.story {
+    padding: 24px 0 16px;
+}
+
+.story__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+}
+
+.story__title,
+.values__title,
+.team__title,
+.contacts__title,
+.feedback__title {
+    margin: 0 0 14px;
+    font-family: var(--font-display);
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+.story__text {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--text-muted);
+}
+
+.values {
+    padding: 48px 0;
+}
+
+.values__list,
+.team__list,
+.contacts__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.values__list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 8px;
+}
+
+.values__item,
+.team__item {
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+}
+
+.values__name,
+.team__name {
+    margin: 0 0 8px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.values__text,
+.team__text {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--text-muted);
+}
+
+.team {
+    padding: 8px 0 88px;
+}
+
+.team__list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 8px;
+}
+
+.team__role {
+    margin: 0 0 6px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+/* Contacts */
+
+.contacts {
+    padding: 24px 0 88px;
+}
+
+.contacts__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+    gap: 40px;
+    align-items: start;
+}
+
+.contacts__item {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    gap: 6px;
+}
+
+.contacts__label {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.contacts__value {
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+.contacts__value--link {
+    transition: color 0.2s ease;
+}
+
+.contacts__value--link:hover {
+    color: var(--accent);
+}
+
+.contacts__note {
+    margin-top: 24px;
+    padding: 18px 0 0;
+    border-top: 1px solid var(--line);
+}
+
+.contacts__note-text {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--text-muted);
+}
+
+.feedback {
+    padding: 28px;
+    border: 1px solid var(--line);
+    background: var(--bg-elevated);
+}
+
+.feedback__group {
+    margin-bottom: 16px;
+}
+
+.feedback__label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.feedback__input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+    transition: border-color 0.2s ease;
+}
+
+.feedback__input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.feedback__select {
+    cursor: pointer;
+}
+
+.feedback__textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.feedback__error {
+    margin: 0 0 12px;
+    color: #c44848;
+    font-size: 14px;
+}
+
+.feedback__success {
+    margin: 0 0 12px;
+    color: #2f7a45;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+body.theme--dark .feedback__error {
+    color: #ff7b7b;
+}
+
+body.theme--dark .feedback__success {
+    color: #7dcea0;
+}
+
+.feedback__submit {
+    width: 100%;
+    min-height: 48px;
+    border: 1px solid var(--accent);
+    background: var(--accent);
+    color: #17150f;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.feedback__submit:hover {
+    background: transparent;
+    color: var(--text);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 960px) {
+    .story__grid,
+    .values__list,
+    .team__list,
+    .contacts__grid {
+        grid-template-columns: 1fr;
+    }
+}

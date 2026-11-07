@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная | Клуб любителей Жигули</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Russo+One&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header__inner">
+            <nav class="header__nav" aria-label="Основная навигация">
+                <a href="#models" class="header__link">Модели и характеристики</a>
+                <a href="./contacts.html" class="header__link">Контакты</a>
+                <a href="./about.html" class="header__link">О нас</a>
+                <a href="./main.html" class="header__logo">ЖИГУЛЬ</a>
+                <a href="#" class="header__link">Сертификат</a>
+                <a href="#" class="header__link">Проекты и тюнинг</a>
+                <a href="./profil.html" class="header__link">Профиль</a>
+            </nav>
+            <button type="button" class="header__theme" id="themeBtn" aria-label="Сменить тему"></button>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="hero" aria-label="Главный экран">
+            <div class="container hero__container">
+                <div class="hero__slider">
+                    <div class="slider">
+                        <div class="slider__track">
+                            <div class="slider__slide">
+                                <img src="../assets/ваз2106.webp" alt="ВАЗ-2106">
+                            </div>
+                            <div class="slider__slide">
+                                <img src="../assets/ваз2107.webp" alt="ВАЗ-2107">
+                            </div>
+                            <div class="slider__slide">
+                                <img src="../assets/ваз2199.webp" alt="ВАЗ-2199">
+                            </div>
+                        </div>
+
+                        <div class="slider__pagination" role="tablist" aria-label="Слайды моделей">
+                            <button type="button" class="slider__bar slider__bar--active" aria-label="Слайд 1"></button>
+                            <button type="button" class="slider__bar" aria-label="Слайд 2"></button>
+                            <button type="button" class="slider__bar" aria-label="Слайд 3"></button>
+                        </div>
+                    </div>
+                    <p class="slider__name" id="slideName">ВАЗ-2106 — «шестёрка»</p>
+                </div>
+
+                <div class="hero__content">
+                    <p class="hero__brand">ЖИГУЛЬ</p>
+                    <h1 class="hero__title">От завода до гаража</h1>
+                    <p class="hero__lead">
+                        Клуб тех, для кого классика ВАЗа — живая история,
+                        а не музейный экспонат.
+                    </p>
+                    <div class="hero__actions">
+                        <a href="#models" class="hero__btn">Смотреть модели</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="models" id="models">
+            <div class="container">
+                <h2 class="models__title">Модели клуба</h2>
+                <p class="models__lead">Три легенды, с которых начинается разговор в любом гараже.</p>
+
+                <ul class="models__list">
+                    <li class="models__item">
+                        <a class="models__link" href="#">
+                            <img class="models__image" src="../assets/2102.webp" alt="ВАЗ-2102"
+                                data-light="../assets/2102.webp" data-dark="../assets/2102черная.jpg">
+                            <span class="models__name">ВАЗ-2102</span>
+                            <span class="models__meta">Универсал · классика</span>
+                        </a>
+                    </li>
+                    <li class="models__item">
+                        <a class="models__link" href="#">
+                            <img class="models__image" src="../assets/2112.jpg" alt="ВАЗ-2112"
+                                data-light="../assets/2112.jpg" data-dark="../assets/2112черная.webp">
+                            <span class="models__name">ВАЗ-2112</span>
+                            <span class="models__meta">Хэтчбек · десятое семейство</span>
+                        </a>
+                    </li>
+                    <li class="models__item">
+                        <a class="models__link" href="#">
+                            <img class="models__image" src="../assets/2113.webp" alt="ВАЗ-2113"
+                                data-light="../assets/2113.webp" data-dark="../assets/2113ченрная.webp">
+                            <span class="models__name">ВАЗ-2113</span>
+                            <span class="models__meta">Трёхдверка · Самара-2</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="container about__inner">
+                <h2 class="about__title">О нас</h2>
+                <p class="about__text">
+                    Мы собираем истории владельцев, заводские детали и гаражные проекты —
+                    всё, что делает «Жигули» своими. Здесь место и для стоковой классики,
+                    и для машин после долгих ночей с ключами и паяльником.
+                </p>
+                <a href="./about.html" class="about__btn">Подробнее о клубе</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <span class="footer__brand">ЖИГУЛЬ</span>
+            <span class="footer__note">Клуб любителей Жигули · учебный проект</span>
+        </div>
+    </footer>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

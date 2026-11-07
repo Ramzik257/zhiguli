@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты | Клуб любителей Жигули</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Russo+One&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header__inner">
+            <nav class="header__nav" aria-label="Основная навигация">
+                <a href="./main.html#models" class="header__link">Модели и характеристики</a>
+                <a href="./contacts.html" class="header__link header__link--active">Контакты</a>
+                <a href="./about.html" class="header__link">О нас</a>
+                <a href="./main.html" class="header__logo">ЖИГУЛЬ</a>
+                <a href="#" class="header__link">Сертификат</a>
+                <a href="#" class="header__link">Проекты и тюнинг</a>
+                <a href="./profil.html" class="header__link">Профиль</a>
+            </nav>
+            <button type="button" class="header__theme" id="themeBtn" aria-label="Сменить тему"></button>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="page">
+            <div class="container">
+                <p class="page__eyebrow">Связь с клубом</p>
+                <h1 class="page__title">Контакты</h1>
+                <p class="page__lead">
+                    Напишите нам про вступление, выезд, поиск запчасти или просто
+                    расскажите историю своей машины — отвечаем обычно в течение дня.
+                </p>
+            </div>
+        </section>
+
+        <section class="contacts">
+            <div class="container contacts__grid">
+                <div class="contacts__info">
+                    <h2 class="contacts__title">Где нас найти</h2>
+
+                    <ul class="contacts__list">
+                        <li class="contacts__item">
+                            <span class="contacts__label">Адрес клуба</span>
+                            <span class="contacts__value">г. Тольятти, ул. Южное шоссе, 36, бокс 14</span>
+                        </li>
+                        <li class="contacts__item">
+                            <span class="contacts__label">Телефон</span>
+                            <a class="contacts__value contacts__value--link" href="tel:+78482601234">+7 (8482) 60-12-34</a>
+                        </li>
+                        <li class="contacts__item">
+                            <span class="contacts__label">E-mail</span>
+                            <a class="contacts__value contacts__value--link" href="mailto:club@zhiguli.garage">club@zhiguli.garage</a>
+                        </li>
+                        <li class="contacts__item">
+                            <span class="contacts__label">Часы работы</span>
+                            <span class="contacts__value">Вт–Сб, 12:00–20:00</span>
+                        </li>
+                        <li class="contacts__item">
+                            <span class="contacts__label">Соцсети</span>
+                            <span class="contacts__value">VK: vk.com/zhiguli_club · Telegram: @zhiguli_garage</span>
+                        </li>
+                    </ul>
+
+                    <div class="contacts__note">
+                        <p class="contacts__note-text">
+                            По воскресеньям часто устраиваем открытый гараж:
+                            можно приехать, посмотреть машины участников и задать
+                            вопросы без записи.
+                        </p>
+                    </div>
+                </div>
+
+                <form class="feedback" id="contactForm" novalidate>
+                    <h2 class="feedback__title">Написать нам</h2>
+
+                    <div class="feedback__group">
+                        <label class="feedback__label" for="contactName">Имя</label>
+                        <input class="feedback__input" type="text" id="contactName" name="name"
+                            placeholder="Как к вам обращаться" required minlength="2">
+                    </div>
+
+                    <div class="feedback__group">
+                        <label class="feedback__label" for="contactEmail">E-mail</label>
+                        <input class="feedback__input" type="email" id="contactEmail" name="email"
+                            placeholder="example@mail.ru" required>
+                    </div>
+
+                    <div class="feedback__group">
+                        <label class="feedback__label" for="contactTopic">Тема</label>
+                        <select class="feedback__input feedback__select" id="contactTopic" name="topic" required>
+                            <option value="">Выберите тему</option>
+                            <option value="join">Вступление в клуб</option>
+                            <option value="parts">Поиск запчастей</option>
+                            <option value="event">Выезд / мероприятие</option>
+                            <option value="story">История моей машины</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
+
+                    <div class="feedback__group">
+                        <label class="feedback__label" for="contactMessage">Сообщение</label>
+                        <textarea class="feedback__input feedback__textarea" id="contactMessage" name="message"
+                            placeholder="Коротко опишите вопрос" required minlength="10"></textarea>
+                    </div>
+
+                    <p class="feedback__error" id="contactError" hidden></p>
+                    <p class="feedback__success" id="contactSuccess" hidden>Сообщение сохранено. Мы свяжемся с вами!</p>
+
+                    <button type="submit" class="feedback__submit">Отправить</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <span class="footer__brand">ЖИГУЛЬ</span>
+            <span class="footer__note">Клуб любителей Жигули · учебный проект</span>
+        </div>
+    </footer>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/contacts.js"></script>
+</body>
+
+</html>
