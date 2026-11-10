@@ -4,9 +4,9 @@
     const themeBtn = document.getElementById('themeBtn');
 
     const slideImagesMap = [
-        ['../assets/ваз2106.webp', '../assets/ваз2106черная.webp'],
-        ['../assets/ваз2107.webp', '../assets/ваз2107черная.webp'],
-        ['../assets/ваз2199.webp', '../assets/ваз2199черная.webp'],
+        ['../assets/2106белая.jpg', '../assets/2106черная.jpg'],
+        ['../assets/2107белая.jpg', '../assets/2107черная.jpg'],
+        ['../assets/2199белая.jpg', '../assets/2199черная.jpg'],
     ];
 
     function swapThemedImages(isDark) {
@@ -16,7 +16,7 @@
             }
         });
 
-        document.querySelectorAll('.models__image').forEach((img) => {
+        document.querySelectorAll('img[data-light][data-dark]').forEach((img) => {
             const lightSrc = img.dataset.light;
             const darkSrc = img.dataset.dark;
 
