@@ -69,7 +69,7 @@ if (!empty($user['created_at'])) {
                 <a href="../html/contacts.html" class="header__link">Контакты</a>
                 <a href="../html/about.html" class="header__link">О нас</a>
                 <a href="../html/main.html" class="header__logo">ЖИГУЛЬ</a>
-                <a href="#" class="header__link">Сертификат</a>
+                <a href="../html/certificate.html" class="header__link">Сертификат</a>
                 <a href="#" class="header__link">Проекты и тюнинг</a>
                 <a href="profile.php" class="header__link header__link--active">Профиль</a>
             </nav>

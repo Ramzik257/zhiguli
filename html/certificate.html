@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сертификат | Клуб любителей Жигули</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Russo+One&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/cert.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header__inner">
+            <nav class="header__nav" aria-label="Основная навигация">
+                <a href="./models.html" class="header__link">Модели и характеристики</a>
+                <a href="./contacts.html" class="header__link">Контакты</a>
+                <a href="./about.html" class="header__link">О нас</a>
+                <a href="./main.html" class="header__logo">ЖИГУЛЬ</a>
+                <a href="./certificate.html" class="header__link header__link--active">Сертификат</a>
+                <a href="#" class="header__link">Проекты и тюнинг</a>
+                <a href="../backend/profile.php" class="header__link">Профиль</a>
+            </nav>
+            <button type="button" class="header__theme" id="themeBtn" aria-label="Сменить тему"></button>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="page">
+            <div class="container">
+                <p class="page__eyebrow">Клубный документ</p>
+                <h1 class="page__title">Сертификат</h1>
+                <p class="page__lead">
+                    Собери свой макет: выбери фон, текст, рамку и три легенды с главной —
+                    потом распечатай или сохрани как сувенир клуба.
+                </p>
+            </div>
+        </section>
+
+        <section class="cert-builder">
+            <div class="container cert-builder__grid">
+                <aside class="cert-options" aria-label="Настройки сертификата">
+                    <h2 class="cert-options__title">Настройки</h2>
+
+                    <div class="cert-options__block">
+                        <p class="cert-options__label">Цвет фона</p>
+                        <div class="cert-swatches" id="bgSwatches" role="listbox" aria-label="Цвет фона">
+                            <button type="button" class="cert-swatch is-active" data-bg="#f7f1e3" data-ink="#1c1b19" aria-label="Кремовый" style="--swatch:#f7f1e3"></button>
+                            <button type="button" class="cert-swatch" data-bg="#1c1b19" data-ink="#f2efe8" aria-label="Чёрный" style="--swatch:#1c1b19"></button>
+                            <button type="button" class="cert-swatch" data-bg="#2a2418" data-ink="#f0e6c8" aria-label="Тёмный гараж" style="--swatch:#2a2418"></button>
+                            <button type="button" class="cert-swatch" data-bg="#e8eef5" data-ink="#1c1b19" aria-label="Светло-серый" style="--swatch:#e8eef5"></button>
+                            <button type="button" class="cert-swatch" data-bg="#3d1f1f" data-ink="#f7e9e9" aria-label="Бордовый" style="--swatch:#3d1f1f"></button>
+                            <label class="cert-swatch cert-swatch--custom" aria-label="Свой цвет" title="Свой цвет">
+                                <input type="color" id="bgCustom" value="#f7f1e3">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="cert-options__block">
+                        <p class="cert-options__label">Рамка</p>
+                        <div class="cert-frames" id="frameOptions">
+                            <button type="button" class="cert-chip is-active" data-frame="classic">Классика</button>
+                            <button type="button" class="cert-chip" data-frame="double">Двойная</button>
+                            <button type="button" class="cert-chip" data-frame="minimal">Минимал</button>
+                            <button type="button" class="cert-chip" data-frame="stamp">С печатью</button>
+                        </div>
+                    </div>
+
+                    <div class="cert-options__block">
+                        <label class="cert-options__label" for="certTitle">Заголовок</label>
+                        <input class="cert-input" id="certTitle" type="text" maxlength="48" value="Сертификат участника">
+                    </div>
+
+                    <div class="cert-options__block">
+                        <label class="cert-options__label" for="certName">Имя / ник</label>
+                        <input class="cert-input" id="certName" type="text" maxlength="40" value="VAZ_Driver" placeholder="Кому вручается">
+                    </div>
+
+                    <div class="cert-options__block">
+                        <label class="cert-options__label" for="certText">Текст</label>
+                        <textarea class="cert-input cert-input--area" id="certText" maxlength="220" rows="4">Настоящим подтверждается, что владелец является участником клуба любителей Жигули и разделяет уважение к классике ВАЗа.</textarea>
+                    </div>
+
+                    <div class="cert-options__block">
+                        <label class="cert-options__label" for="certDate">Дата</label>
+                        <input class="cert-input" id="certDate" type="text" maxlength="32" value="">
+                    </div>
+
+                    <div class="cert-options__block">
+                        <p class="cert-options__label">Три фото с главной</p>
+                        <p class="cert-options__hint">Включи нужные модели — на сертификате будут до трёх машин.</p>
+                        <div class="cert-photos" id="photoOptions">
+                            <label class="cert-photo-option">
+                                <input type="checkbox" name="photo" value="2101" data-src="../assets/2101cat.jpg" data-name="ВАЗ-2101" checked>
+                                <img src="../assets/2101cat.jpg" alt="ВАЗ-2101">
+                                <span>2101 · копейка</span>
+                            </label>
+                            <label class="cert-photo-option">
+                                <input type="checkbox" name="photo" value="2109" data-src="../assets/2109cat.jpg" data-name="ВАЗ-2109" checked>
+                                <img src="../assets/2109cat.jpg" alt="ВАЗ-2109">
+                                <span>2109 · девятка</span>
+                            </label>
+                            <label class="cert-photo-option">
+                                <input type="checkbox" name="photo" value="21099" data-src="../assets/2199белая.jpg" data-name="ВАЗ-21099" checked>
+                                <img src="../assets/2199белая.jpg" alt="ВАЗ-21099">
+                                <span>21099 · Самара</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="cert-options__actions">
+                        <button type="button" class="cert-btn cert-btn--primary" id="printCert">Печать</button>
+                        <button type="button" class="cert-btn" id="resetCert">Сбросить</button>
+                    </div>
+                </aside>
+
+                <div class="cert-preview-wrap">
+                    <p class="cert-preview-wrap__label">Макет</p>
+                    <article class="certificate" id="certificate" data-frame="classic" style="--cert-bg:#f7f1e3; --cert-ink:#1c1b19;">
+                        <div class="certificate__inner">
+                            <p class="certificate__brand">ЖИГУЛЬ</p>
+                            <h2 class="certificate__title" id="previewTitle">Сертификат участника</h2>
+                            <p class="certificate__subtitle">Клуб любителей Жигули</p>
+                            <p class="certificate__award">вручается</p>
+                            <p class="certificate__name" id="previewName">VAZ_Driver</p>
+                            <p class="certificate__text" id="previewText">
+                                Настоящим подтверждается, что владелец является участником клуба любителей Жигули
+                                и разделяет уважение к классике ВАЗа.
+                            </p>
+
+                            <ul class="certificate__cars" id="previewCars">
+                                <li class="certificate__car">
+                                    <img src="../assets/2101cat.jpg" alt="ВАЗ-2101">
+                                    <span>ВАЗ-2101</span>
+                                </li>
+                                <li class="certificate__car">
+                                    <img src="../assets/2109cat.jpg" alt="ВАЗ-2109">
+                                    <span>ВАЗ-2109</span>
+                                </li>
+                                <li class="certificate__car">
+                                    <img src="../assets/2199белая.jpg" alt="ВАЗ-21099">
+                                    <span>ВАЗ-21099</span>
+                                </li>
+                            </ul>
+
+                            <div class="certificate__footer">
+                                <p class="certificate__date" id="previewDate"></p>
+                                <p class="certificate__seal" aria-hidden="true">Клуб</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <span class="footer__brand">ЖИГУЛЬ</span>
+            <span class="footer__note">Клуб любителей Жигули · учебный проект</span>
+        </div>
+    </footer>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/cert.js"></script>
+</body>
+
+</html>
