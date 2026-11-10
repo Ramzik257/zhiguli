@@ -4,3 +4,5 @@ desktop.ini
 *.log
 .env
 .env.*
+data/*.sqlite
+data/*.sqlite-journal

@@ -1,3 +1,41 @@
+<?php
+
+declare(strict_types=1);
+
+require_once __DIR__ . '/includes/auth.php';
+
+start_app_session();
+
+if (current_user()) {
+    header('Location: profile.php');
+    exit;
+}
+
+$error = '';
+$name = '';
+$email = '';
+$phone = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!verify_csrf($_POST['csrf'] ?? null)) {
+        $error = 'Сессия устарела. Обновите страницу и попробуйте снова.';
+    } else {
+        $name = (string) ($_POST['name'] ?? '');
+        $email = (string) ($_POST['email'] ?? '');
+        $password = (string) ($_POST['password'] ?? '');
+        $phone = (string) ($_POST['phone'] ?? '');
+
+        $result = register_user($name, $email, $password, $phone);
+
+        if ($result === true) {
+            header('Location: ../html/main.html');
+            exit;
+        }
+
+        $error = $result;
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -13,25 +51,24 @@
 </head>
 
 <body>
-    <div class="hero-bg">
-        <img src="https://avatars.mds.yandex.net/i?id=205a10b744e6ef926cf567e26a49b87b_l-5646461-images-thumbs&ref=rim&n=13&w=1080&h=810"
-            alt="Жигули на фоне заката" />
-    </div>
+    <div class="hero-bg" aria-hidden="true"></div>
 
     <div class="container">
-        <form class="form" id="userForm" novalidate>
+        <form class="form" method="post" action="register.php" novalidate>
             <h1 class="form__title">Регистрация</h1>
+
+            <input type="hidden" name="csrf" value="<?= e(csrf_token()) ?>">
 
             <div class="form__group">
                 <label class="form__label" for="name">Введите ник</label>
                 <input class="form__input" type="text" id="name" name="name" placeholder="Например: VAZ_Driver"
-                    required minlength="2" />
+                    required minlength="2" value="<?= e($name) ?>" />
             </div>
 
             <div class="form__group">
                 <label class="form__label" for="email">E-mail</label>
                 <input class="form__input" type="email" id="email" name="email" placeholder="example@mail.ru"
-                    required />
+                    required value="<?= e($email) ?>" />
             </div>
 
             <div class="form__group">
@@ -43,12 +80,14 @@
             <div class="form__group">
                 <label class="form__label" for="phone">Телефон</label>
                 <input class="form__input" type="tel" id="phone" name="phone" placeholder="+7 (911) 628-39-41"
-                    required />
+                    required value="<?= e($phone) ?>" />
             </div>
 
-            <p class="form__error" id="formError" hidden></p>
+            <?php if ($error !== ''): ?>
+                <p class="form__error"><?= e($error) ?></p>
+            <?php endif; ?>
 
-            <button type="submit" id="submit" class="form__submit">Вступить в клуб</button>
+            <button type="submit" class="form__submit">Вступить в клуб</button>
 
             <div class="form__social">
                 <span class="form__social-text">Или быстрый вход через:</span>
@@ -59,12 +98,10 @@
             </div>
 
             <div class="form__login">
-                Уже есть аккаунт? <a class="form__login-link" href="./main.html">Войти</a>
+                Уже есть аккаунт? <a class="form__login-link" href="login.php">Войти</a>
             </div>
         </form>
     </div>
-
-    <script src="../js/reg.js"></script>
 </body>
 
 </html>
