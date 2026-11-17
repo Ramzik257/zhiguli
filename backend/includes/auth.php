@@ -48,7 +48,10 @@ function current_user(): ?array
         return null;
     }
 
-    $stmt = db()->prepare('SELECT id, name, email, phone, created_at FROM users WHERE id = :id LIMIT 1');
+    $stmt = db()->prepare(
+        'SELECT id, name, email, phone, city, favorite_model, created_at
+         FROM users WHERE id = :id LIMIT 1'
+    );
     $stmt->execute(['id' => (int) $_SESSION['user_id']]);
     $user = $stmt->fetch();
 
@@ -175,11 +178,30 @@ function require_login(): array
     return $user;
 }
 
-function update_profile(int $userId, string $name, string $email, string $phone, string $currentPassword = '', string $newPassword = ''): string|true
+function allowed_favorite_models(): array
 {
+    return [
+        'ВАЗ-2101', 'ВАЗ-2102', 'ВАЗ-2103', 'ВАЗ-2104', 'ВАЗ-2105', 'ВАЗ-2106', 'ВАЗ-2107',
+        'ВАЗ-2108', 'ВАЗ-2109', 'ВАЗ-21099', 'ВАЗ-2110', 'ВАЗ-2111', 'ВАЗ-2112',
+        'ВАЗ-2113', 'ВАЗ-2114', 'ВАЗ-2115',
+    ];
+}
+
+function update_profile(
+    int $userId,
+    string $name,
+    string $email,
+    string $phone,
+    string $currentPassword = '',
+    string $newPassword = '',
+    string $city = '',
+    string $favoriteModel = ''
+): string|true {
     $name = trim($name);
     $email = normalize_email($email);
     $phone = trim($phone);
+    $city = trim($city);
+    $favoriteModel = trim($favoriteModel);
     $currentPassword = trim($currentPassword);
     $newPassword = trim($newPassword);
     $phoneDigits = preg_replace('/\D+/', '', $phone) ?? '';
@@ -194,6 +216,14 @@ function update_profile(int $userId, string $name, string $email, string $phone,
 
     if (strlen($phoneDigits) < 10) {
         return 'Введите корректный номер телефона.';
+    }
+
+    if ($city !== '' && text_length($city) > 100) {
+        return 'Слишком длинное название города.';
+    }
+
+    if ($favoriteModel !== '' && !in_array($favoriteModel, allowed_favorite_models(), true)) {
+        return 'Выберите модель из списка клуба.';
     }
 
     $stmt = db()->prepare('SELECT * FROM users WHERE id = :id LIMIT 1');
@@ -221,29 +251,38 @@ function update_profile(int $userId, string $name, string $email, string $phone,
         }
     }
 
+    $cityValue = $city === '' ? null : $city;
+    $modelValue = $favoriteModel === '' ? null : $favoriteModel;
+
     if ($changePassword) {
         $update = db()->prepare(
             'UPDATE users
-             SET name = :name, email = :email, phone = :phone, password_hash = :password_hash
+             SET name = :name, email = :email, phone = :phone, city = :city,
+                 favorite_model = :favorite_model, password_hash = :password_hash
              WHERE id = :id'
         );
         $update->execute([
             'name' => $name,
             'email' => $email,
             'phone' => $phone,
+            'city' => $cityValue,
+            'favorite_model' => $modelValue,
             'password_hash' => password_hash($newPassword, PASSWORD_DEFAULT),
             'id' => $userId,
         ]);
     } else {
         $update = db()->prepare(
             'UPDATE users
-             SET name = :name, email = :email, phone = :phone
+             SET name = :name, email = :email, phone = :phone, city = :city,
+                 favorite_model = :favorite_model
              WHERE id = :id'
         );
         $update->execute([
             'name' => $name,
             'email' => $email,
             'phone' => $phone,
+            'city' => $cityValue,
+            'favorite_model' => $modelValue,
             'id' => $userId,
         ]);
     }

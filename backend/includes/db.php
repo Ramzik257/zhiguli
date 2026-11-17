@@ -58,10 +58,21 @@ function db(): PDO
             email VARCHAR(190) NOT NULL,
             phone VARCHAR(40) NOT NULL,
             password_hash VARCHAR(255) NOT NULL,
+            city VARCHAR(100) NULL,
+            favorite_model VARCHAR(40) NULL,
             created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
             UNIQUE KEY users_email_unique (email)
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci'
     );
+
+    // Existing installs: add garage fields if missing.
+    $columns = $pdo->query('SHOW COLUMNS FROM users')->fetchAll(PDO::FETCH_COLUMN);
+    if (!in_array('city', $columns, true)) {
+        $pdo->exec('ALTER TABLE users ADD COLUMN city VARCHAR(100) NULL AFTER phone');
+    }
+    if (!in_array('favorite_model', $columns, true)) {
+        $pdo->exec('ALTER TABLE users ADD COLUMN favorite_model VARCHAR(40) NULL AFTER city');
+    }
 
     return $pdo;
 }
