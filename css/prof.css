@@ -19,8 +19,8 @@
     height: 88px;
     border: 2px solid var(--accent);
     background:
-        radial-gradient(circle at 30% 25%, rgba(194, 160, 69, 0.28), transparent 55%),
-        linear-gradient(145deg, rgba(194, 160, 69, 0.12), transparent 70%);
+        radial-gradient(circle at 30% 25%, var(--accent-glow), transparent 55%),
+        linear-gradient(145deg, var(--footer-glow, var(--accent-glow)), transparent 70%);
     color: var(--accent);
     font-family: var(--font-display);
     font-size: 28px;
@@ -117,7 +117,7 @@
 
 .profile__card--tip {
     background:
-        linear-gradient(180deg, rgba(194, 160, 69, 0.08), transparent 70%);
+        linear-gradient(180deg, var(--accent-glow), transparent 70%);
     padding: 22px 16px 16px;
     border-top: 1px solid var(--accent);
 }
@@ -318,11 +318,11 @@
     font-weight: 700;
 }
 
-body.theme--dark .profile__error {
+body:is(.theme--dark, .theme--garage, .theme--racing, [data-theme="dark"], [data-theme="garage"], [data-theme="racing"]) .profile__error {
     color: #ff7b7b;
 }
 
-body.theme--dark .profile__success {
+body:is(.theme--dark, .theme--garage, .theme--racing, [data-theme="dark"], [data-theme="garage"], [data-theme="racing"]) .profile__success {
     color: #7dcea0;
 }
 

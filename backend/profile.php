@@ -322,7 +322,14 @@ $hasGarage = $city !== '' || $favoriteModel !== '';
         </section>
     </main>
 
+    <button type="button" class="to-top" id="toTop" aria-label="Наверх" hidden>
+        <svg class="to-top__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 5l7 7h-4v7h-6v-7H5l7-7z" />
+        </svg>
+    </button>
+
     <script src="../js/theme.js"></script>
+    <script src="../js/to-top.js"></script>
 </body>
 
 </html>

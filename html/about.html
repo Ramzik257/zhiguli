@@ -23,7 +23,9 @@
                 <a href="./main.html" class="header__logo">ЖИГУЛЬ</a>
                 <a href="./certificate.html" class="header__link">Сертификат</a>
                 <a href="./projects.html" class="header__link">Проекты и тюнинг</a>
-                <a href="../backend/profile.php" class="header__link">Профиль</a>
+                <a href="../backend/login.php" class="header__link" data-auth="profile"
+                    data-auth-guest="../backend/login.php" data-auth-user="../backend/profile.php"
+                    data-auth-guest-label="Войти" data-auth-user-label="Профиль">Войти</a>
             </nav>
             <button type="button" class="header__theme" id="themeBtn" aria-label="Сменить тему"></button>
         </div>
@@ -121,7 +123,7 @@
                         Клуб тех, для кого классика ВАЗа — живая история,
                         а не музейный экспонат.
                     </p>
-                    <a href="../backend/profile.php" class="footer__cta">Стать своим</a>
+                    <a href="../backend/register.php" class="footer__cta" data-auth="join" data-auth-guest="../backend/register.php" data-auth-user="../backend/profile.php" data-auth-guest-label="Стать своим" data-auth-user-label="Открыть профиль">Стать своим</a>
                 </div>
 
                 <div class="footer__col">
@@ -138,7 +140,7 @@
                     <p class="footer__col-title">Клуб</p>
                     <ul class="footer__list">
                         <li><a href="./contacts.html">Контакты</a></li>
-                        <li><a href="../backend/profile.php">Профиль</a></li>
+                        <li><a href="../backend/login.php" data-auth="profile" data-auth-guest="../backend/login.php" data-auth-user="../backend/profile.php" data-auth-guest-label="Войти" data-auth-user-label="Профиль">Войти</a></li>
                         <li><a href="./main.html">Главная</a></li>
                     </ul>
                 </div>
@@ -174,7 +176,15 @@
         <div class="footer__glow" aria-hidden="true"></div>
     </footer>
 
+    <button type="button" class="to-top" id="toTop" aria-label="Наверх" hidden>
+        <svg class="to-top__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 5l7 7h-4v7h-6v-7H5l7-7z" />
+        </svg>
+    </button>
+
     <script src="../js/theme.js"></script>
+    <script src="../js/auth-nav.js"></script>
+    <script src="../js/to-top.js"></script>
 </body>
 
 </html>

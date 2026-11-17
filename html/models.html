@@ -23,7 +23,9 @@
                 <a href="./main.html" class="header__logo">ЖИГУЛЬ</a>
                 <a href="./certificate.html" class="header__link">Сертификат</a>
                 <a href="./projects.html" class="header__link">Проекты и тюнинг</a>
-                <a href="../backend/profile.php" class="header__link">Профиль</a>
+                <a href="../backend/login.php" class="header__link" data-auth="profile"
+                    data-auth-guest="../backend/login.php" data-auth-user="../backend/profile.php"
+                    data-auth-guest-label="Войти" data-auth-user-label="Профиль">Войти</a>
             </nav>
             <button type="button" class="header__theme" id="themeBtn" aria-label="Сменить тему"></button>
         </div>
@@ -37,6 +39,40 @@
                 <p class="page__lead">
                     Классика, Самара и десятое семейство — заводские ориентиры,
                     по которым в клубе сравнивают машины, ищут запчасти и спорят у капота.
+                </p>
+            </div>
+        </section>
+
+        <section class="catalog-tools" aria-label="Поиск и фильтры моделей">
+            <div class="container catalog-tools__inner">
+                <label class="catalog-tools__search">
+                    <span class="catalog-tools__label">Поиск</span>
+                    <input class="catalog-tools__input" type="search" id="modelsSearch"
+                        placeholder="2106, шестёрка, седан…" autocomplete="off">
+                </label>
+                <label class="catalog-tools__field">
+                    <span class="catalog-tools__label">Кузов</span>
+                    <select class="catalog-tools__select" id="modelsBody">
+                        <option value="all">Все кузова</option>
+                        <option value="седан">Седан</option>
+                        <option value="универсал">Универсал</option>
+                        <option value="хэтчбек">Хэтчбек</option>
+                    </select>
+                </label>
+                <label class="catalog-tools__field">
+                    <span class="catalog-tools__label">Годы</span>
+                    <select class="catalog-tools__select" id="modelsEra">
+                        <option value="all">Все годы</option>
+                        <option value="70">1970-е</option>
+                        <option value="80">1980-е</option>
+                        <option value="90">1990-е</option>
+                        <option value="00">2000-е+</option>
+                    </select>
+                </label>
+            </div>
+            <div class="container">
+                <p class="catalog-tools__empty" id="modelsEmpty" hidden>
+                    Ничего не нашлось — сбрось фильтр или измени запрос.
                 </p>
             </div>
         </section>
@@ -473,7 +509,7 @@
                         Клуб тех, для кого классика ВАЗа — живая история,
                         а не музейный экспонат.
                     </p>
-                    <a href="../backend/profile.php" class="footer__cta">Стать своим</a>
+                    <a href="../backend/register.php" class="footer__cta" data-auth="join" data-auth-guest="../backend/register.php" data-auth-user="../backend/profile.php" data-auth-guest-label="Стать своим" data-auth-user-label="Открыть профиль">Стать своим</a>
                 </div>
 
                 <div class="footer__col">
@@ -490,7 +526,7 @@
                     <p class="footer__col-title">Клуб</p>
                     <ul class="footer__list">
                         <li><a href="./contacts.html">Контакты</a></li>
-                        <li><a href="../backend/profile.php">Профиль</a></li>
+                        <li><a href="../backend/login.php" data-auth="profile" data-auth-guest="../backend/login.php" data-auth-user="../backend/profile.php" data-auth-guest-label="Войти" data-auth-user-label="Профиль">Войти</a></li>
                         <li><a href="./main.html">Главная</a></li>
                     </ul>
                 </div>
@@ -533,7 +569,9 @@
     </button>
 
     <script src="../js/theme.js"></script>
+    <script src="../js/auth-nav.js"></script>
     <script src="../js/to-top.js"></script>
+    <script src="../js/models.js"></script>
 </body>
 
 </html>

@@ -224,11 +224,11 @@
     font-weight: 700;
 }
 
-body.theme--dark .feedback__error {
+body:is(.theme--dark, .theme--garage, .theme--racing, [data-theme="dark"], [data-theme="garage"], [data-theme="racing"]) .feedback__error {
     color: #ff7b7b;
 }
 
-body.theme--dark .feedback__success {
+body:is(.theme--dark, .theme--garage, .theme--racing, [data-theme="dark"], [data-theme="garage"], [data-theme="racing"]) .feedback__success {
     color: #7dcea0;
 }
 
@@ -251,6 +251,75 @@ body.theme--dark .feedback__success {
     background: transparent;
     color: var(--text);
     transform: translateY(-1px);
+}
+
+.catalog-tools {
+    padding: 8px 0 20px;
+}
+
+.catalog-tools__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) repeat(2, minmax(140px, 0.7fr));
+    gap: 14px 16px;
+    align-items: end;
+}
+
+.catalog-tools__label,
+.projects-search__label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.catalog-tools__input,
+.catalog-tools__select,
+.projects-search__input {
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+    transition: border-color 0.2s ease;
+}
+
+.catalog-tools__select {
+    cursor: pointer;
+    appearance: none;
+    background-image:
+        linear-gradient(45deg, transparent 50%, var(--text-muted) 50%),
+        linear-gradient(135deg, var(--text-muted) 50%, transparent 50%);
+    background-position:
+        calc(100% - 18px) calc(50% - 3px),
+        calc(100% - 12px) calc(50% - 3px);
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+    padding-right: 36px;
+}
+
+.catalog-tools__input:focus,
+.catalog-tools__select:focus,
+.projects-search__input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.catalog-tools__empty {
+    margin: 16px 0 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.projects-search {
+    display: block;
+    margin-bottom: 18px;
 }
 
 .catalog-nav {
@@ -643,6 +712,10 @@ body.theme--dark .feedback__success {
     }
 
     .spec__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .catalog-tools__inner {
         grid-template-columns: 1fr;
     }
 }
