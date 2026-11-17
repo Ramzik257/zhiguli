@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проекты и тюнинг | Клуб любителей Жигули</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Russo+One&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header__inner">
+            <nav class="header__nav" aria-label="Основная навигация">
+                <a href="./models.html" class="header__link">Модели и характеристики</a>
+                <a href="./contacts.html" class="header__link">Контакты</a>
+                <a href="./about.html" class="header__link">О нас</a>
+                <a href="./main.html" class="header__logo">ЖИГУЛЬ</a>
+                <a href="./certificate.html" class="header__link">Сертификат</a>
+                <a href="./projects.html" class="header__link header__link--active">Проекты и тюнинг</a>
+                <a href="../backend/profile.php" class="header__link">Профиль</a>
+            </nav>
+            <button type="button" class="header__theme" id="themeBtn" aria-label="Сменить тему"></button>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="page">
+            <div class="container">
+                <p class="page__eyebrow">Витрина клуба</p>
+                <h1 class="page__title">Проекты и тюнинг</h1>
+                <p class="page__lead">
+                    Машины участников: от аккуратной реставрации до ночного стенса
+                    и дрифт-корчей. Здесь смотрим, что получилось после месяцев в гараже —
+                    без рейтинга «кто круче», только живые истории.
+                </p>
+            </div>
+        </section>
+
+        <section class="projects-filter" aria-label="Фильтр проектов">
+            <div class="container">
+                <ul class="projects-filter__list" role="tablist">
+                    <li>
+                        <button type="button" class="projects-filter__btn projects-filter__btn--active"
+                            data-filter="all" aria-pressed="true">Все</button>
+                    </li>
+                    <li>
+                        <button type="button" class="projects-filter__btn" data-filter="exterior"
+                            aria-pressed="false">Внешний вид</button>
+                    </li>
+                    <li>
+                        <button type="button" class="projects-filter__btn" data-filter="restore"
+                            aria-pressed="false">Восстановление</button>
+                    </li>
+                    <li>
+                        <button type="button" class="projects-filter__btn" data-filter="stance"
+                            aria-pressed="false">Стенс</button>
+                    </li>
+                    <li>
+                        <button type="button" class="projects-filter__btn" data-filter="drift"
+                            aria-pressed="false">Дрифт корчи</button>
+                    </li>
+                    <li>
+                        <button type="button" class="projects-filter__btn" data-filter="street"
+                            aria-pressed="false">Стритуха</button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="projects" aria-label="Проекты участников">
+            <div class="container">
+                <ul class="projects__list">
+                    <li class="projects__item" data-category="exterior stance">
+                        <article class="project">
+                            <div class="project__media">
+                                <img class="project__image" src="../assets/projects/2106-night.jpg" alt="ВАЗ-2106 ночной стенс">
+                            </div>
+                            <div class="project__body">
+                                <p class="project__tag">Внешний вид · стенс</p>
+                                <h2 class="project__title">Ночная «шестёрка»</h2>
+                                <p class="project__meta">ВАЗ-2106 · Игорь С. · Тольятти</p>
+                                <p class="project__text">
+                                    Чёрный цвет, узкие диски и мягкая посадка. Машина ездит
+                                    каждый день — тюнинг без жертвы практичности.
+                                </p>
+                            </div>
+                        </article>
+                    </li>
+
+                    <li class="projects__item" data-category="restore stance">
+                        <article class="project">
+                            <div class="project__media">
+                                <img class="project__image" src="../assets/projects/2101-restore.jpg" alt="ВАЗ-2101 ретро-стенс">
+                            </div>
+                            <div class="project__body">
+                                <p class="project__tag">Восстановление · стенс</p>
+                                <h2 class="project__title">Ретро «копейка»</h2>
+                                <p class="project__meta">ВАЗ-2101 · Марина В. · Казань</p>
+                                <p class="project__text">
+                                    Белый кузов, глубокие диски и посадка в пол.
+                                    Классика с характером улицы, а не музейный экспонат.
+                                </p>
+                            </div>
+                        </article>
+                    </li>
+
+                    <li class="projects__item" data-category="stance">
+                        <article class="project">
+                            <div class="project__media">
+                                <img class="project__image" src="../assets/projects/2109-stance.jpg" alt="ВАЗ-2109 на пневмоподвеске">
+                            </div>
+                            <div class="project__body">
+                                <p class="project__tag">Стенс</p>
+                                <h2 class="project__title">«Девятка» на винтах</h2>
+                                <p class="project__meta">ВАЗ-2109 · Денис Р. · Уфа</p>
+                                <p class="project__text">
+                                    Пневма для города и выездов. Утром — клиренс под ямы,
+                                    вечером — посадка под фото у клуба.
+                                </p>
+                            </div>
+                        </article>
+                    </li>
+
+                    <li class="projects__item" data-category="exterior">
+                        <article class="project">
+                            <div class="project__media">
+                                <img class="project__image" src="../assets/projects/2112-body.jpg" alt="ВАЗ-2112 после перекраски">
+                            </div>
+                            <div class="project__body">
+                                <p class="project__tag">Внешний вид</p>
+                                <h2 class="project__title">Кузов после гаража</h2>
+                                <p class="project__meta">ВАЗ-2112 · Сергей Н. · Челябинск</p>
+                                <p class="project__text">
+                                    Полная перекраска, новые уплотнители и аккуратный
+                                    антикор. Машина снова выглядит цельной.
+                                </p>
+                            </div>
+                        </article>
+                    </li>
+
+                    <li class="projects__item" data-category="restore exterior">
+                        <article class="project">
+                            <div class="project__media">
+                                <img class="project__image" src="../assets/projects/2102-wagon.jpg" alt="ВАЗ-2102 ретро-универсал">
+                            </div>
+                            <div class="project__body">
+                                <p class="project__tag">Восстановление · внешний вид</p>
+                                <h2 class="project__title">Чистый универсал</h2>
+                                <p class="project__meta">ВАЗ-2102 · Павел Т. · Нижний Новгород</p>
+                                <p class="project__text">
+                                    Белый кузов, хром и спокойная посадка. Без стикеров
+                                    и крика — просто аккуратная классика на каждый день.
+                                </p>
+                            </div>
+                        </article>
+                    </li>
+
+                    <li class="projects__item" data-category="stance">
+                        <article class="project">
+                            <div class="project__media">
+                                <img class="project__image" src="../assets/projects/2105-stance.jpg" alt="ВАЗ-2105 на стенсе">
+                            </div>
+                            <div class="project__body">
+                                <p class="project__tag">Стенс</p>
+                                <h2 class="project__title">Красная «пятёрка»</h2>
+                                <p class="project__meta">ВАЗ-2105 · Кирилл М. · Пермь</p>
+                                <p class="project__text">
+                                    Жёсткая посадка, широкие полки и ночные фото.
+                                    Днём — обычная классика, вечером — витрина клуба.
+                                </p>
+                            </div>
+                        </article>
+                    </li>
+
+                    <li class="projects__item" data-category="stance exterior">
+                        <article class="project">
+                            <div class="project__media">
+                                <img class="project__image" src="../assets/projects/2114-stance.jpg" alt="ВАЗ-2114 на пневмоподвеске">
+                            </div>
+                            <div class="project__body">
+                                <p class="project__tag">Стенс · внешний вид</p>
+                                <h2 class="project__title">Фиолетовая «четырнадцатая»</h2>
+                                <p class="project__meta">ВАЗ-2114 · Никита Л. · Екатеринбург</p>
+                                <p class="project__text">
+                                    Пневма, хром и цвет, который видно за квартал.
+                                    На выездах собирает взгляды быстрее, чем бензин.
+                                </p>
+                            </div>
+                        </article>
+                    </li>
+
+                    <li class="projects__item" data-category="drift">
+                        <article class="project">
+                            <div class="project__media">
+                                <img class="project__image" src="../assets/projects/drift-2105-rds.jpg" alt="Дрифт-корч ВАЗ-2105 RDS">
+                            </div>
+                            <div class="project__body">
+                                <p class="project__tag">Дрифт корч</p>
+                                <h2 class="project__title">RDS «пятёрка»</h2>
+                                <p class="project__meta">ВАЗ-2105 · Роман Б. · Москва</p>
+                                <p class="project__text">
+                                    Зелёные фары, каркас и ливрея под серию.
+                                    Корч для трассы, а не для парковки у дома.
+                                </p>
+                            </div>
+                        </article>
+                    </li>
+
+                    <li class="projects__item" data-category="drift">
+                        <article class="project">
+                            <div class="project__media">
+                                <img class="project__image" src="../assets/projects/drift-2106-hoonigan.jpg" alt="Дрифт-корч ВАЗ-2106 Hoonigan">
+                            </div>
+                            <div class="project__body">
+                                <p class="project__tag">Дрифт корч</p>
+                                <h2 class="project__title">Hoonigan «шестёрка»</h2>
+                                <p class="project__meta">ВАЗ-2106 · Вадим Ю. · Санкт-Петербург</p>
+                                <p class="project__text">
+                                    Широкий кузов, турбины наружу и золотые диски.
+                                    Классика в режиме полного безумия.
+                                </p>
+                            </div>
+                        </article>
+                    </li>
+
+                    <li class="projects__item" data-category="drift">
+                        <article class="project">
+                            <div class="project__media">
+                                <img class="project__image" src="../assets/projects/drift-2106-red.jpg" alt="Дрифт-корч ВАЗ-2106 красный">
+                            </div>
+                            <div class="project__body">
+                                <p class="project__tag">Дрифт корч</p>
+                                <h2 class="project__title">Чёрно-красная «шестёрка»</h2>
+                                <p class="project__meta">ВАЗ-2106 · Кирилл М. · Казань</p>
+                                <p class="project__text">
+                                    Расширители, антикрыло и красный каркас.
+                                    Городская классика, заточенная под угол.
+                                </p>
+                            </div>
+                        </article>
+                    </li>
+
+                    <li class="projects__item" data-category="drift">
+                        <article class="project">
+                            <div class="project__media">
+                                <img class="project__image" src="../assets/projects/drift-2105-track.jpg" alt="Дрифт-корч ВАЗ-2105 на трассе">
+                            </div>
+                            <div class="project__body">
+                                <p class="project__tag">Дрифт корч</p>
+                                <h2 class="project__title">Белая «пятёрка» в заносе</h2>
+                                <p class="project__meta">ВАЗ-2105 · Денис Р. · Тула</p>
+                                <p class="project__text">
+                                    Каркас, угол и дырка на крыле. Настоящий корч —
+                                    живёт на трассе, а не в гараже.
+                                </p>
+                            </div>
+                        </article>
+                    </li>
+
+                    <li class="projects__item" data-category="street">
+                        <article class="project">
+                            <div class="project__media">
+                                <img class="project__image" src="../assets/projects/street-2107-panels.jpg" alt="Стритуха ВАЗ-2107">
+                            </div>
+                            <div class="project__body">
+                                <p class="project__tag">Стритуха</p>
+                                <h2 class="project__title">Разноцветная «семёрка»</h2>
+                                <p class="project__meta">ВАЗ-2107 · Артём К. · Казань</p>
+                                <p class="project__text">
+                                    Чёрное крыло, стикеры и ночная стоянка. Боевой
+                                    вид без прикрас — классика уличного стиля.
+                                </p>
+                            </div>
+                        </article>
+                    </li>
+
+                    <li class="projects__item" data-category="street">
+                        <article class="project">
+                            <div class="project__media">
+                                <img class="project__image" src="../assets/projects/street-2105-graffiti.jpg" alt="Стритуха ВАЗ-2105 с граффити">
+                            </div>
+                            <div class="project__body">
+                                <p class="project__tag">Стритуха</p>
+                                <h2 class="project__title">Граффити на «пятёрке»</h2>
+                                <p class="project__meta">ВАЗ-2105 · Максим Д. · Москва</p>
+                                <p class="project__text">
+                                    Красный низ, крест на фаре и теги на дверях.
+                                    Грязная эстетика двора — и этим красиво.
+                                </p>
+                            </div>
+                        </article>
+                    </li>
+
+                    <li class="projects__item" data-category="street">
+                        <article class="project">
+                            <div class="project__media">
+                                <img class="project__image" src="../assets/projects/street-2105-force.jpg" alt="Стритуха ВАЗ-2105 FORCE">
+                            </div>
+                            <div class="project__body">
+                                <p class="project__tag">Стритуха</p>
+                                <h2 class="project__title">FORCE на широких</h2>
+                                <p class="project__meta">ВАЗ-2105 · Егор П. · Краснодар</p>
+                                <p class="project__text">
+                                    Расширители, ливрея и ковш. Ночная стритуха,
+                                    которую слышно раньше, чем видно.
+                                </p>
+                            </div>
+                        </article>
+                    </li>
+                </ul>
+
+                <p class="projects__empty" id="projectsEmpty" hidden>В этой категории пока нет проектов.</p>
+            </div>
+        </section>
+
+        <section class="projects-cta">
+            <div class="container projects-cta__inner">
+                <h2 class="projects-cta__title">Есть свой проект?</h2>
+                <p class="projects-cta__text">
+                    Пришлите фото и короткую историю машины — добавим в витрину клуба.
+                </p>
+                <a href="./contacts.html" class="projects-cta__btn">Написать в клуб</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <span class="footer__brand">ЖИГУЛЬ</span>
+            <span class="footer__note">Клуб любителей Жигули · учебный проект</span>
+        </div>
+    </footer>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/projects.js"></script>
+</body>
+
+</html>
